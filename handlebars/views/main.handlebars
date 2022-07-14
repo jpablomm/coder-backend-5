@@ -1,0 +1,32 @@
+<h1>Coderhouse - Template Engine</h1>
+<h3>Crea un nuevo item</h3>
+{{!-- <form id="submitForm" method="POST" action="http://localhost:8080/api/productos"> --}}
+<form id="submitForm">
+    <label for="itemTitle">Title</label>
+    <input id="itemTitle" type="text" name="title">
+    <label for="itemPrice">Price</label>
+    <input id="itemPrice" type="text" name="price">
+    <label for="itemThumbnail">Thumbnail</label>
+    <input id="itemThumbnail" type="text" name="thumbnail">
+    <input id="submit" type="submit" value="Crear producto">
+</form>
+<script>
+    document.getElementById('submitForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const form = document.forms[0]
+        fetch("http://localhost:8080/api/productos", {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
+            body: JSON.stringify({
+                title: form.title.value,
+                price: form.price.value,
+                thumbnail: form.thumbnail.value
+            })
+        })
+        window.location.href = 'http://localhost:3000/productos'
+        })
+</script>
