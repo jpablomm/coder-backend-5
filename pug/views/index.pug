@@ -1,0 +1,18 @@
+html
+    head 
+        script(src="formSubmission.js", defer)
+        link(rel="stylesheet", href="index.css")
+    body
+        header
+            a(href="/") Agregar producto
+            a(href="/productos") Lista de productos
+        h1 Coderhouse - Template Engine - Pug
+        h3 Crea un nuevo item
+        form(id="submitForm")
+            label(for="itemTitle") Title 
+            input(type="text", id="itemTitle", name="title") 
+            label(for="itemPrice") Price 
+            input(type="text", id="itemPrice", name="price") 
+            label(for="itemThumbnail") Thumbnail 
+            input(type="text", id="itemThumbnail", name="thumbnail") 
+            input(type="submit", id="submit", value="Crear producto") 

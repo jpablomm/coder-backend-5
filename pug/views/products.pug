@@ -1,0 +1,11 @@
+html
+    head 
+        link(rel="stylesheet", href="index.css")    
+    body
+        header
+            a(href="/") Agregar producto
+            a(href="/productos") Lista de productos
+        h1 Lista de productos
+        ul 
+            each item in products
+                li= item.title + " - $" + item.price + " - " + item.thumbnail

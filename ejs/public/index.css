@@ -1,0 +1,9 @@
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+#submit {
+    display: block;
+    margin-top: 25px;
+}

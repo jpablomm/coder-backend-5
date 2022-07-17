@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+</head>
+<body>
+    <header>
+        <a href="/">Agregar producto</a>
+        <a href="/productos">Lista de productos</a>
+    </header>
+    <!-- {{{body}}} -->
+    <h1>Coderhouse - Template Engine - EJS</h1>
+    <h3>Crea un nuevo item</h3>
+    <form id="submitForm" method="POST" action="http://localhost:8080/api/productos">
+    <form id="submitForm">
+        <label for="itemTitle">Title</label>
+        <input id="itemTitle" type="text" name="title">
+        <label for="itemPrice">Price</label>
+        <input id="itemPrice" type="text" name="price">
+        <label for="itemThumbnail">Thumbnail</label>
+        <input id="itemThumbnail" type="text" name="thumbnail">
+        <input id="submit" type="submit" value="Crear producto">
+    </form>
+<script>
+    document.getElementById('submitForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const form = document.forms[0]
+        fetch("http://localhost:8080/api/productos", {
+            method: 'POST',
+            mode: 'cors',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
+            body: JSON.stringify({
+                title: form.title.value,
+                price: form.price.value,
+                thumbnail: form.thumbnail.value
+            })
+        })
+        window.location.href = 'http://localhost:3000/productos'
+        })
+</script>
+</body>
+</html>
