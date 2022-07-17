@@ -1,0 +1,1 @@
+De las tres opciones, me gustó más EJS por las similitudes que tiene con JSX en React. Es mu fácil insertar snippets de JavaScript.
